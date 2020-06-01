@@ -94,7 +94,13 @@ class ScaffoldExample extends StatelessWidget {
           )
         ],
       ),
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: Colors.blueGrey,
+        child: Icon(Icons.queue_music),
+        onPressed: () => debugPrint("FAB pressed!"),
+      ),
       bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: Colors.cyan.shade200,
         items: [
           BottomNavigationBarItem(
               icon: Icon(Icons.money_off), title: Text('Item 1')),
