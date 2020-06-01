@@ -94,6 +94,23 @@ class ScaffoldExample extends StatelessWidget {
           )
         ],
       ),
+      bottomNavigationBar: BottomNavigationBar(
+        items: [
+          BottomNavigationBarItem(
+              icon: Icon(Icons.money_off), title: Text('Item 1')),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.movie), title: Text('Item 2')),
+        ],
+        onTap: (int index) {
+          // debugPrint("Item #$index tapped");
+          if (index == 0) {
+            // return true;
+            debugPrint("Item #$index tapped");
+          } else {
+            debugPrint("Item #$index tapped");
+          }
+        },
+      ),
       body: Container(
         alignment: Alignment.center,
         child: Home(),
