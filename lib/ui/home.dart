@@ -15,6 +15,7 @@ class Home extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            CustomButton(),
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: InkWell(
@@ -96,6 +97,33 @@ class ScaffoldExample extends StatelessWidget {
       body: Container(
         alignment: Alignment.center,
         child: Home(),
+      ),
+    );
+  }
+}
+
+class CustomButton extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: () {
+        final snackbar = SnackBar(
+          content: Text(
+            'You have exploded your brain because there is a lot of Flutter stuffs in your head!',
+            textAlign: TextAlign.center,
+          ),
+          backgroundColor: Colors.lime.shade800,
+        );
+
+        Scaffold.of(context).showSnackBar(snackbar);
+      },
+      child: Container(
+        padding: const EdgeInsets.all(10),
+        decoration: BoxDecoration(
+          color: Colors.pinkAccent,
+          borderRadius: BorderRadius.circular(8),
+        ),
+        child: Text("Tap this button!"),
       ),
     );
   }
